@@ -12,7 +12,7 @@ const ParkSummaryModal = dynamic(() => import('../components/ParkSummaryModal'))
 
 const fetcher = url => fetch(url).then(r => r.json());
 
-const MAX_PARK = 5;
+const MAX_PARK = 20;
 
 export default function Home() {
   const [totalAvailablePark, setTotalAvailablePark] = useState(0);
