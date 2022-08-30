@@ -6,10 +6,10 @@ export default async(req, res) => {
         try {
             const body = JSON.parse(req.body);
             const { current, minutes, bill } = JSON.parse(nextBase64.decode(body.data));
-            console.log(data)
+            console.log(body, current, minutes, bill)
             const result = await excuteQuery({
-                query: 'update carparks set depart_at=?, time_range=?, minutes=? where id = ?',
-                values: [current, minutes, bill, body.id],
+                query: 'update carparks set depart_at=?, time_range=?, bill=?, status=? where id = ?',
+                values: [new Date(current), minutes, bill, 'HAS_LEFT', body.id],
             });
             console.log(result);
             res.status(200).json({ result })

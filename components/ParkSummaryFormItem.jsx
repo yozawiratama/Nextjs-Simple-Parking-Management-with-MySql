@@ -1,6 +1,6 @@
 
 
-export default function ParkSummaryFormItem({label, value}) {
+export default function ParkSummaryFormItem({ label, value }) {
 
     return (
         <div className="field is-horizontal">

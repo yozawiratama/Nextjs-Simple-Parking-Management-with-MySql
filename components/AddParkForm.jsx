@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export default function AddParkForm({ onSubmit }) {
+export default function AddParkForm({ onSubmit, disabled, submitButtonText }) {
     const [regNoVal, setRegNoVal] = useState('');
 
     return (
@@ -11,13 +11,13 @@ export default function AddParkForm({ onSubmit }) {
             setRegNoVal('');
         }} className="field has-addons">
             <div className="control is-expanded">
-                <input className="input" type="text" value={regNoVal} onChange={e => {
-                    setRegNoVal(e.target.value);
+                <input className="input" type="text" disabled={disabled} value={regNoVal} onChange={e => {
+                    setRegNoVal(e.target.value.toUpperCase());
                 }} placeholder="Registration Number" />
             </div>
             <div className="control">
-                <button className="button is-info">
-                    Park Car
+                <button className="button is-info" disabled={disabled}>
+                    {submitButtonText}
                 </button>
             </div>
         </form>

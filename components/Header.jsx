@@ -1,12 +1,12 @@
-export default function Header() {
+export default function Header({ title = "Parking Management", subtitle='' }) {
     return (
         <section className="hero is-primary">
             <div className="hero-body">
                 <p className="title">
-                    Parking Management
+                    {title}
                 </p>
                 <p className="subtitle">
-                    Aplikasi pencatatan parkir
+                    {subtitle}
                 </p>
             </div>
         </section>
